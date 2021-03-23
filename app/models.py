@@ -14,7 +14,7 @@ class User(UserMixin, db.Model):
     def __repr__(self):
         return f'id: {self.id}, user: {self.username}, email: {self.email}, password_hash: {self.password_hash}'
 
-    def set_password_hash(self, password):
+    def set_password(self, password):
         self.password_hash = generate_password_hash(password)
 
     def check_password(self, password):
