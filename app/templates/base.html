@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     {% if title %}
@@ -8,12 +9,14 @@
         <title>Howdy from Bridgerton fan club</title>
     {% endif %}
 </head>
+
 <body>
 
 <nav>
-    Bridgerton Blog
-    <a href={{ url_for('index') }} id="">Home</a>
-    <a href={{ url_for('login') }} id="">Login</a>
+    Bridgerton Blog:
+    <a href={{ url_for('index') }} id="home_page">Home</a>
+    <a href={{ url_for('login') }} id="login_page">Login</a>
+    {#    <a href={{ url_for('logout') }} id="logout_page">Logout</a>#}
 </nav>
 
 {% with messages = get_flashed_messages() %}
