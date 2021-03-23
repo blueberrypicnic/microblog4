@@ -3,18 +3,5 @@
 
 {% block content %}
     <h1>Hello, {{ current_user.username }}</h1>
-    {% if posts %}
-        <table>
-            <tr>
-                <th>Author</th>
-                <th>Comment</th>
-            </tr>
-            {% for post in posts %}
-                <tr>
-                    <td>{{ post.author.username }}</td>
-                    <td>{{ post.body }}</td>
-                </tr>
-            {% endfor %}
-        </table>
-    {% endif %}
+    {% include "_post.html" %}
 {% endblock %}
