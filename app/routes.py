@@ -25,15 +25,50 @@ def index():
         db.session.commit()
         flash('Your post is now live!')
         return redirect(url_for('index'))
-    posts = current_user.followed_posts().all()
-    return render_template('index.html', title='Home', form=form, posts=posts)
+
+    # Paginate the list of posts
+    page = request.args.get('page', 1, type=int)
+    posts = current_user.followed_posts().paginate(page, app.config['POSTS_PER_PAGE'], False)
+
+    # Make sure we have a next page
+    if posts.has_next:
+        next_url = url_for('index', page=posts.next_num)
+    else:
+        next_url = None
+
+    # Make sure we have a previous page
+    if posts.has_prev:
+        prev_url = url_for('index', page=posts.prev_num)
+    else:
+        prev_url = None
+
+    # Re-render this page while showing posts with correct pagination
+    return render_template('index.html', title='Home', form=form, posts=posts.items,
+                           prev_url=prev_url, next_url=next_url)
 
 
 @app.route('/explore')
 @login_required
 def explore():
-    posts = Post.query.order_by(Post.timestamp.desc()).all()
-    return render_template('index.html', title='Explore', posts=posts)
+    # Paginate the list of posts
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.order_by(Post.timestamp.desc()).paginate(page, app.config['POSTS_PER_PAGE'], False)
+
+    # Make sure we have a next page
+    if posts.has_next:
+        next_url = url_for('index', page=posts.next_num)
+    else:
+        next_url = None
+
+    # Make sure we have a previous page
+    if posts.has_prev:
+        prev_url = url_for('index', page=posts.prev_num)
+    else:
+        prev_url = None
+
+    # Re-render this page while showing posts with correct pagination
+    return render_template('index.html', title='Explore', posts=posts.items,
+                           prev_url=prev_url, next_url=next_url)
 
 
 @app.route('/login', methods=['GET', 'POST'])
