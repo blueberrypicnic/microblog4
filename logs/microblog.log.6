@@ -1,0 +1,95 @@
+2021-03-24 16:31:01,460 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
+2021-03-24 16:34:11,575 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
+2021-03-24 17:08:48,554 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
+2021-03-24 17:23:04,173 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
+2021-03-24 17:24:43,473 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
+2021-03-24 17:25:04,926 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
+2021-03-24 17:33:11,303 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
+2021-03-24 17:55:20,660 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
+2021-03-24 17:56:30,877 ERROR: Exception on /user_profile/louis [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 93, in user_profile
+    return render_template('profile.html', user=user, posts=posts)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\profile.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\base.html", line 36, in top-level template code
+    {% block content %}
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\profile.html", line 24, in block "content"
+    {{ form.hidden_tag() }}
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2021-03-24 17:59:58,010 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
+2021-03-24 18:00:13,832 ERROR: Exception on /user_profile/henriette [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 93, in user_profile
+    form = EmptyForm()
+NameError: name 'EmptyForm' is not defined
+2021-03-24 18:01:31,060 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
+2021-03-24 18:02:07,457 ERROR: Exception on /follow/louis [POST] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 146, in follow
+    return redirect(url_for('user', username=username))
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\helpers.py", line 357, in url_for
+    rv = url_adapter.build(
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\werkzeug\routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['username']. Did you mean 'user_profile' instead?

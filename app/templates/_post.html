@@ -1,4 +1,5 @@
     {% if posts %}
+    <br>
         <table>
             <tr>
                 <th>Author</th>
@@ -6,7 +7,12 @@
             </tr>
             {% for post in posts %}
                 <tr>
-                    <td>{{ post.author.username }}</td>
+{#                    <td>{{ post.author.username }}</td>#}
+
+                    <td>
+                        <a href="{{ url_for('user_profile', username=post.author.username) }}">{{ post.author.username }}</a>
+                    </td>
+
                     <td>{{ post.body }}</td>
                 </tr>
             {% endfor %}

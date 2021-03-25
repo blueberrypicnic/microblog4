@@ -15,10 +15,11 @@
 <nav>
     Bridgerton Blog:
     <a href={{ url_for('index') }} id="home_page">Home</a>
+    <a href={{ url_for('explore') }} id="explore_page">Explore</a>
     {% if current_user.is_anonymous %}
-    <a href={{ url_for('login') }} id="login_page">Login</a>
+        <a href={{ url_for('login') }} id="login_page">Login</a>
     {% else %}
-    <a href={{ url_for('user_profile', username=current_user.username) }} id="profile_page">Profile</a>
+        <a href={{ url_for('user_profile', username=current_user.username) }} id="profile_page">Profile</a>
     <a href={{ url_for('logout') }} id="logout_page">Logout</a>
     {% endif %}
 </nav>

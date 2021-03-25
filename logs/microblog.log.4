@@ -1,4 +1,5 @@
-2021-03-25 10:45:27,651 ERROR: Exception on /index [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
+2021-03-25 08:52:52,625 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
+2021-03-25 08:53:18,607 ERROR: Exception on / [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -28,14 +29,14 @@ Traceback (most recent call last):
     raise value.with_traceback(tb)
   File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\index.html", line 1, in top-level template code
     {% extends "base.html" %}
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\base.html", line 37, in top-level template code
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\base.html", line 36, in top-level template code
     {% block content %}
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\index.html", line 21, in block "content"
-    {% include "_post.html" %}
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\_post.html", line 11, in top-level template code
-    <a href="{{ url_for('user_profile', post.author.username) }}"></a>
-TypeError: url_for() takes 1 positional argument but 2 were given
-2021-03-25 10:45:30,072 ERROR: Exception on /index [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\index.html", line 10, in block "content"
+    {{ form.post.label }}<br>
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'app.forms.PostForm object' has no attribute 'post'
+2021-03-25 08:53:41,198 ERROR: Exception on /index [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -65,14 +66,15 @@ Traceback (most recent call last):
     raise value.with_traceback(tb)
   File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\index.html", line 1, in top-level template code
     {% extends "base.html" %}
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\base.html", line 37, in top-level template code
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\base.html", line 36, in top-level template code
     {% block content %}
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\index.html", line 21, in block "content"
-    {% include "_post.html" %}
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\_post.html", line 11, in top-level template code
-    <a href="{{ url_for('user_profile', post.author.username) }}"></a>
-TypeError: url_for() takes 1 positional argument but 2 were given
-2021-03-25 10:45:31,060 ERROR: Exception on /index [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\index.html", line 10, in block "content"
+    {{ form.post.label }}<br>
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'app.forms.PostForm object' has no attribute 'post'
+2021-03-25 08:56:48,184 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
+2021-03-25 08:56:57,971 ERROR: Exception on / [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -102,10 +104,17 @@ Traceback (most recent call last):
     raise value.with_traceback(tb)
   File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\index.html", line 1, in top-level template code
     {% extends "base.html" %}
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\base.html", line 37, in top-level template code
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\base.html", line 36, in top-level template code
     {% block content %}
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\index.html", line 21, in block "content"
-    {% include "_post.html" %}
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\_post.html", line 11, in top-level template code
-    <a href="{{ url_for('user_profile', post.author.username) }}"></a>
-TypeError: url_for() takes 1 positional argument but 2 were given
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\index.html", line 12, in block "content"
+    {% for error in form.post.errors %}
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'app.forms.PostForm object' has no attribute 'post'
+2021-03-25 08:58:26,732 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
+2021-03-25 09:07:29,339 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
+2021-03-25 09:08:03,687 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
+2021-03-25 09:09:15,606 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
+2021-03-25 09:09:48,986 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
+2021-03-25 09:10:34,763 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
+2021-03-25 09:10:55,882 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
