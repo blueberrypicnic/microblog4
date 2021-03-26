@@ -1,4 +1,4 @@
-2021-03-25 10:45:32,099 ERROR: Exception on /explore [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
+2021-03-26 10:08:19,523 ERROR: Exception on /user_profile/Daphne [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,28 +14,23 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 36, in explore
-    return render_template('index.html', title='Explore', posts=posts)
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 137, in render_template
-    return _render(
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 120, in _render
-    rv = template.render(context)
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\base.html", line 37, in top-level template code
-    {% block content %}
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\index.html", line 21, in block "content"
-    {% include "_post.html" %}
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\_post.html", line 11, in top-level template code
-    <a href="{{ url_for('user_profile', post.author.username) }}"></a>
-TypeError: url_for() takes 1 positional argument but 2 were given
-2021-03-25 10:45:33,322 ERROR: Exception on /user_profile/louis [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 132, in user_profile
+    next_url, prev_url = check_prev_and_next_pages('user_profile', posts)
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 13, in check_prev_and_next_pages
+    next_url = url_for(webpage, page=posts.next_num)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\helpers.py", line 357, in url_for
+    rv = url_adapter.build(
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\werkzeug\routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user_profile' with values ['page']. Did you forget to specify values ['username']?
+2021-03-26 10:09:31,614 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
+2021-03-26 10:09:51,601 ERROR: Exception on /user_profile/Daphne [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -51,8 +46,38 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 99, in user_profile
-    return render_template('profile.html', user=user, posts=posts, form=form)
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 132, in user_profile
+    next_url = url_for('user', username=user.username, page=posts.next_num) \
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\helpers.py", line 357, in url_for
+    rv = url_adapter.build(
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\werkzeug\routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['page', 'username']. Did you mean 'register' instead?
+2021-03-26 10:11:17,443 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
+2021-03-26 10:11:32,598 ERROR: Exception on /user_profile/Daphne [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 138, in user_profile
+    return render_template('profile.html', username=username, posts=posts.items,
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 137, in render_template
     return _render(
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 120, in _render
@@ -67,47 +92,9 @@ Traceback (most recent call last):
     {% extends "base.html" %}
   File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\base.html", line 37, in top-level template code
     {% block content %}
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\profile.html", line 38, in block "content"
-    {% include "_post.html" %}
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\_post.html", line 11, in top-level template code
-    <a href="{{ url_for('user_profile', post.author.username) }}"></a>
-TypeError: url_for() takes 1 positional argument but 2 were given
-2021-03-25 10:45:48,849 ERROR: Exception on /index [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
-Traceback (most recent call last):
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 29, in index
-    return render_template('index.html', title='Home', form=form, posts=posts)
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 137, in render_template
-    return _render(
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 120, in _render
-    rv = template.render(context)
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\base.html", line 37, in top-level template code
-    {% block content %}
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\index.html", line 21, in block "content"
-    {% include "_post.html" %}
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\_post.html", line 11, in top-level template code
-    <a href="{{ url_for('user_profile', post.author.username) }}"></a>
-TypeError: url_for() takes 1 positional argument but 2 were given
-2021-03-25 10:50:53,696 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-25 10:53:11,082 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\profile.html", line 6, in block "content"
+    <img src="{{ user.avatar(128) }}">
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'user' is undefined
+2021-03-26 10:12:36,436 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]

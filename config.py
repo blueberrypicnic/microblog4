@@ -22,4 +22,4 @@ class Config(object):
     ADMINS = ['blueberrycode@outlook.com']
 
     # Pagination
-    POSTS_PER_PAGE = 5
+    POSTS_PER_PAGE = 10
