@@ -7,6 +7,20 @@ from app.forms import LoginForm, RegistrationForm, EditProfileForm, EmptyForm, P
 from app.models import User, Post
 
 
+def check_prev_and_next_pages(webpage, posts):
+    # Make sure we have a next page
+    if posts.has_next:
+        next_url = url_for(webpage, page=posts.next_num)
+    else:
+        next_url = None
+    # Make sure we have a previous page
+    if posts.has_prev:
+        prev_url = url_for(webpage, page=posts.prev_num)
+    else:
+        prev_url = None
+    return next_url, prev_url
+
+
 @app.before_request
 def before_request():
     if current_user.is_authenticated:
@@ -30,17 +44,7 @@ def index():
     page = request.args.get('page', 1, type=int)
     posts = current_user.followed_posts().paginate(page, app.config['POSTS_PER_PAGE'], False)
 
-    # Make sure we have a next page
-    if posts.has_next:
-        next_url = url_for('index', page=posts.next_num)
-    else:
-        next_url = None
-
-    # Make sure we have a previous page
-    if posts.has_prev:
-        prev_url = url_for('index', page=posts.prev_num)
-    else:
-        prev_url = None
+    next_url, prev_url = check_prev_and_next_pages('index', posts)
 
     # Re-render this page while showing posts with correct pagination
     return render_template('index.html', title='Home', form=form, posts=posts.items,
@@ -52,23 +56,17 @@ def index():
 def explore():
     # Paginate the list of posts
     page = request.args.get('page', 1, type=int)
+    # posts = Post.query.order_by(Post.timestamp.desc())
+
     posts = Post.query.order_by(Post.timestamp.desc()).paginate(page, app.config['POSTS_PER_PAGE'], False)
 
-    # Make sure we have a next page
-    if posts.has_next:
-        next_url = url_for('index', page=posts.next_num)
-    else:
-        next_url = None
-
-    # Make sure we have a previous page
-    if posts.has_prev:
-        prev_url = url_for('index', page=posts.prev_num)
-    else:
-        prev_url = None
+    next_url, prev_url = check_prev_and_next_pages('explore', posts)
 
     # Re-render this page while showing posts with correct pagination
     return render_template('index.html', title='Explore', posts=posts.items,
                            prev_url=prev_url, next_url=next_url)
+
+    # return render_template('explore.html', title='Index')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -126,12 +124,16 @@ def register():
 @login_required
 def user_profile(username):
     user = User.query.filter_by(username=username).first_or_404()
-    posts = [
-        {'author': user, 'body': 'Test post #1: Versailles is way more scandalous than Bridgerton.'},
-        {'author': user, 'body': 'Test post #2: The French reign supreme when it comes to depravity.'}
-    ]
+    page = request.args.get('page', 1, type=int)
+    posts = user.posts.order_by(Post.timestamp.desc()).paginate(
+        page, app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('user_profile', username=user.username, page=posts.next_num) \
+        if posts.has_next else None
+    prev_url = url_for('user_profile', username=user.username, page=posts.prev_num) \
+        if posts.has_prev else None
     form = EmptyForm()
-    return render_template('profile.html', user=user, posts=posts, form=form)
+    return render_template('profile.html', user=user, posts=posts.items,
+                           next_url=next_url, prev_url=prev_url, form=form)
 
 
 @app.route('/edit_profile', methods=['GET', 'POST'])

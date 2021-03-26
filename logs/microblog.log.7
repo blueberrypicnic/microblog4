@@ -1,14 +1,4 @@
-2021-03-23 19:15:31,073 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-23 19:17:04,517 ERROR: Exception on /edit_profile [POST] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
-Traceback (most recent call last):
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\sqlalchemy\engine\base.py", line 1705, in _execute_context
-    self.dialect.do_execute(
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\sqlalchemy\engine\default.py", line 681, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.IntegrityError: UNIQUE constraint failed: user.username
-
-The above exception was the direct cause of the following exception:
-
+2021-03-25 14:51:23,935 ERROR: Exception on /user_profile/DukeOfHastings [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -24,86 +14,98 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 103, in edit_profile
-    db.session.commit()
-  File "<string>", line 2, in commit
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\sqlalchemy\orm\session.py", line 1406, in commit
-    self._transaction.commit(_to_root=self.future)
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\sqlalchemy\orm\session.py", line 820, in commit
-    self._prepare_impl()
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\sqlalchemy\orm\session.py", line 799, in _prepare_impl
-    self.session.flush()
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\sqlalchemy\orm\session.py", line 3224, in flush
-    self._flush(objects)
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\sqlalchemy\orm\session.py", line 3364, in _flush
-    transaction.rollback(_capture_exception=True)
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
-    compat.raise_(
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\sqlalchemy\util\compat.py", line 198, in raise_
-    raise exception
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\sqlalchemy\orm\session.py", line 3324, in _flush
-    flush_context.execute()
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 453, in execute
-    rec.execute(self)
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 627, in execute
-    util.preloaded.orm_persistence.save_obj(
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\sqlalchemy\orm\persistence.py", line 234, in save_obj
-    _emit_update_statements(
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\sqlalchemy\orm\persistence.py", line 998, in _emit_update_statements
-    c = connection._execute_20(
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\sqlalchemy\engine\base.py", line 1520, in _execute_20
-    return meth(self, args_10style, kwargs_10style, execution_options)
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\sqlalchemy\sql\elements.py", line 313, in _execute_on_connection
-    return connection._execute_clauseelement(
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\sqlalchemy\engine\base.py", line 1389, in _execute_clauseelement
-    ret = self._execute_context(
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\sqlalchemy\engine\base.py", line 1748, in _execute_context
-    self._handle_dbapi_exception(
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\sqlalchemy\engine\base.py", line 1929, in _handle_dbapi_exception
-    util.raise_(
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\sqlalchemy\util\compat.py", line 198, in raise_
-    raise exception
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\sqlalchemy\engine\base.py", line 1705, in _execute_context
-    self.dialect.do_execute(
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\sqlalchemy\engine\default.py", line 681, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username
-[SQL: UPDATE user SET username=?, about_me=? WHERE user.id = ?]
-[parameters: ('louis', "I'm Susan.", 6)]
-(Background on this error at: http://sqlalche.me/e/14/gkpj)
-2021-03-24 10:18:33,368 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 10:19:50,381 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 10:20:16,674 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 10:23:34,253 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 11:44:13,970 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 11:44:39,216 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 11:44:55,629 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 11:45:02,576 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 11:47:35,544 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 11:48:02,852 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 12:03:45,506 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 12:07:16,065 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 12:12:21,542 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 12:46:51,174 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 12:47:00,061 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 12:47:58,710 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 12:53:57,831 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 15:52:26,767 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 15:53:29,779 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 15:53:47,501 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 15:59:30,004 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 16:00:03,456 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 16:07:50,118 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 16:10:21,450 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 16:17:01,651 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 16:22:32,232 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 16:22:43,523 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 16:22:55,756 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 16:26:12,805 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 16:26:53,225 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 16:27:01,444 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 16:27:53,352 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 16:28:46,811 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 16:29:27,449 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 16:29:46,719 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-24 16:30:04,138 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 131, in user_profile
+    return render_template('profile.html', user=user, posts=posts, form=form,
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\profile.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\base.html", line 37, in top-level template code
+    {% block content %}
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\profile.html", line 38, in block "content"
+    {% include "_post.html" %}
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\_post.html", line 8, in top-level template code
+    {% for post in posts %}
+TypeError: 'Pagination' object is not iterable
+2021-03-25 14:51:27,190 ERROR: Exception on /user_profile/DukeOfHastings [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 131, in user_profile
+    return render_template('profile.html', user=user, posts=posts, form=form,
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\profile.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\base.html", line 37, in top-level template code
+    {% block content %}
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\profile.html", line 38, in block "content"
+    {% include "_post.html" %}
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\_post.html", line 8, in top-level template code
+    {% for post in posts %}
+TypeError: 'Pagination' object is not iterable
+2021-03-25 14:51:30,778 ERROR: Exception on /user_profile/DukeOfHastings [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 131, in user_profile
+    return render_template('profile.html', user=user, posts=posts, form=form,
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\profile.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\base.html", line 37, in top-level template code
+    {% block content %}
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\profile.html", line 38, in block "content"
+    {% include "_post.html" %}
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\_post.html", line 8, in top-level template code
+    {% for post in posts %}
+TypeError: 'Pagination' object is not iterable
