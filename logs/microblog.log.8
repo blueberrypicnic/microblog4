@@ -1,4 +1,4 @@
-2021-03-26 10:12:51,791 ERROR: Exception on /user_profile/Daphne [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
+2021-03-26 12:08:35,131 ERROR: Exception on /reset_password_request [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,31 +12,36 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 138, in user_profile
-    return render_template('profile.html', username=username, posts=posts.items,
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 137, in render_template
-    return _render(
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 120, in _render
-    rv = template.render(context)
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\profile.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\base.html", line 37, in top-level template code
-    {% block content %}
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\profile.html", line 6, in block "content"
-    <img src="{{ user.avatar(128) }}">
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 471, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'user' is undefined
-2021-03-26 10:14:59,899 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-26 10:15:17,460 ERROR: Exception on /user_profile/Daphne [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 107, in reset_password_request
+    form = ResetPasswordRequestForm()
+NameError: name 'ResetPasswordRequestForm' is not defined
+2021-03-26 12:09:22,397 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 12:12:22,751 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 12:15:32,625 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 12:26:47,040 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 12:32:00,717 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 14:08:07,890 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 14:10:38,693 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 14:11:43,576 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 14:13:31,457 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 14:25:35,771 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 14:27:47,557 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 14:29:51,424 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 14:30:01,407 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 14:31:47,441 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 14:32:01,463 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 14:32:35,305 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 14:33:55,494 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 14:38:25,712 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 14:57:02,500 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 15:04:56,433 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 15:09:25,758 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 15:10:40,746 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 15:20:15,185 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 15:27:41,306 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 15:28:28,215 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 15:28:56,160 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 15:29:12,089 ERROR: Exception on /reset_password_request [POST] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -50,25 +55,11 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 130, in user_profile
-    next_url = url_for('user', username=user.username, page=posts.next_num) \
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\helpers.py", line 370, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2216, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\helpers.py", line 357, in url_for
-    rv = url_adapter.build(
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\werkzeug\routing.py", line 2179, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['page', 'username']. Did you mean 'register' instead?
-2021-03-26 10:16:52,291 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:43]
-2021-03-26 10:59:31,080 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
-2021-03-26 12:05:50,928 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
-2021-03-26 12:05:56,842 ERROR: Exception on /login [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 111, in reset_password_request
+    send_password_reset_email(user)
+NameError: name 'send_password_reset_email' is not defined
+2021-03-26 15:33:48,065 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 15:35:09,520 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6MSwiZXhwIjoxNjE2NzkxNDQyLjg3NTI1NTh9.WqfqtellO4eOyBULjj2wnBEbHBpgZMAEv_MBEC3RuHU [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -82,33 +73,20 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 100, in login
-    return render_template('login.html', title='Login', form=form)
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 137, in render_template
-    return _render(
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 120, in _render
-    rv = template.render(context)
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\login.html", line 1, in top-level template code
-    {% extends 'base.html' %}
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\base.html", line 37, in top-level template code
-    {% block content %}
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\login.html", line 28, in block "content"
-    <p>Forgot your password? <a href="{{ url_for('reset_password_reset') }}">Click to reset password</a></p>
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\helpers.py", line 370, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2216, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\helpers.py", line 357, in url_for
-    rv = url_adapter.build(
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\werkzeug\routing.py", line 2179, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'reset_password_reset'. Did you mean 'reset_password_request' instead?
-2021-03-26 12:07:45,684 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 132, in reset_password
+    return render_template('reset_password.html', form=form)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 89, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: reset_password.html

@@ -1,4 +1,4 @@
-2021-03-26 15:52:03,486 ERROR: Exception on /reset_password_request [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
+2021-03-26 15:55:24,432 ERROR: Exception on /reset_password_request [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -13,10 +13,25 @@ Traceback (most recent call last):
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
   File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 115, in reset_password_request
-    return render_template(os.path.join(basedir, 'reset_password.html'),
-NameError: name 'os' is not defined
-2021-03-26 15:52:42,506 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
-2021-03-26 15:52:48,967 ERROR: Exception on /reset_password_request [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
+    return render_template('email/reset_password.html',
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\email\reset_password.html", line 1, in top-level template code
+    <p>Dear {{ user.username }},</p>
+  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'user' is undefined
+2021-03-26 15:57:46,493 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 16:11:05,620 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 16:11:34,858 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6MSwiZXhwIjoxNjE2NzkzNjgwLjUwMTg0MzV9.9hiDZb4_piurxwqQKoqOlx4y9syy_gn3vfjRqTEstpk [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -30,26 +45,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 116, in reset_password_request
-    return render_template(os.path.join(basedir, 'reset_password.html'),
-NameError: name 'basedir' is not defined
-2021-03-26 15:54:00,554 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
-2021-03-26 15:54:07,106 ERROR: Exception on /reset_password_request [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
-Traceback (most recent call last):
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 115, in reset_password_request
-    return render_template('reset_password.html',
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 123, in reset_password
+    return render_template('reset_password.html', form=form)
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 138, in render_template
     ctx.app.jinja_env.get_or_select_template(template_name_or_list),
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
@@ -65,8 +62,8 @@ Traceback (most recent call last):
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 89, in _get_source_fast
     raise TemplateNotFound(template)
 jinja2.exceptions.TemplateNotFound: reset_password.html
-2021-03-26 15:54:44,057 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
-2021-03-26 15:54:49,928 ERROR: Exception on /reset_password_request [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
+2021-03-26 16:12:37,450 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+2021-03-26 16:13:04,806 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6MSwiZXhwIjoxNjE2NzkzNzc2LjA0NjAwNzJ9.L8f5k9XnOWKkVTvaOBmwdHoz-7aGnw2Ji0ScYjcQLB0 [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -80,8 +77,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 115, in reset_password_request
-    return render_template('mail/reset_password.html',
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\routes.py", line 123, in reset_password
+    return render_template('/mail/reset_password.html', form=form)
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 138, in render_template
     ctx.app.jinja_env.get_or_select_template(template_name_or_list),
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
@@ -96,5 +93,5 @@ Traceback (most recent call last):
     return self._get_source_fast(environment, template)
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\templating.py", line 89, in _get_source_fast
     raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: mail/reset_password.html
-2021-03-26 15:55:18,201 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
+jinja2.exceptions.TemplateNotFound: /mail/reset_password.html
+2021-03-26 16:13:36,803 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:45]
