@@ -6,3 +6,7 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
+# My files to ignore
+C:\Users\BlueberryCode\PycharmProjects\microblog\.env
+C:\Users\BlueberryCode\PycharmProjects\microblog\.vagrant\machines\default\virtualbox\private_key
+

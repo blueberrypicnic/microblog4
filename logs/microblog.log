@@ -1,4 +1,4 @@
-2021-03-27 12:45:14,638 ERROR: Exception on /index [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
+2021-03-27 16:28:59,968 ERROR: Exception on /index [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -38,19 +38,14 @@ Traceback (most recent call last):
     {% block body -%}
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
     {% block content -%}
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\base.html", line 51, in block "content"
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\base.html", line 52, in block "content"
     {% block app_content %}
   File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\index.html", line 12, in block "app_content"
     {% include '_post.html' %}
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\_post.html", line 9, in template
-    <a href="{{ url_for('user_profile', username=post.author.username }}">
-jinja2.exceptions.TemplateSyntaxError: unexpected '}', expected ')'
-2021-03-27 12:48:31,405 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:47]
-2021-03-27 12:48:44,259 ERROR: Exception on / [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\_post.html", line 12, in top-level template code
+    said {{ moment(post.timestamp).from_now() }}:
+jinja2.exceptions.UndefinedError: 'flask_moment._moment object' has no attribute 'from_now'
+2021-03-27 16:29:10,996 ERROR: Exception on /index [GET] [in C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -90,16 +85,15 @@ Traceback (most recent call last):
     {% block body -%}
   File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
     {% block content -%}
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\base.html", line 51, in block "content"
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\base.html", line 52, in block "content"
     {% block app_content %}
   File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\index.html", line 12, in block "app_content"
     {% include '_post.html' %}
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "C:\Users\BlueberryCode\anaconda3\envs\flask38pycharm\lib\site-packages\jinja2\_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\_post.html", line 9, in template
-    <a href="{{ url_for('user_profile', username=post.author.username }}">
-jinja2.exceptions.TemplateSyntaxError: unexpected '}', expected ')'
-2021-03-27 12:50:08,810 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:47]
-2021-03-27 12:55:32,427 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:47]
+  File "C:\Users\BlueberryCode\PycharmProjects\microblog\app\templates\_post.html", line 12, in top-level template code
+    said {{ moment(post.timestamp).from_now() }}:
+jinja2.exceptions.UndefinedError: 'flask_moment._moment object' has no attribute 'from_now'
+2021-03-27 16:29:54,268 INFO: Microblog startup [in C:\Users\BlueberryCode\PycharmProjects\microblog\app\__init__.py:49]
+2021-03-30 04:47:48,991 INFO: Microblog startup [in /vagrant/app/__init__.py:49]
+2021-03-30 04:52:09,914 INFO: Microblog startup [in /vagrant/app/__init__.py:49]
+2021-03-30 04:53:36,568 INFO: Microblog startup [in /vagrant/app/__init__.py:49]
+2021-03-30 04:54:20,360 INFO: Microblog startup [in /vagrant/app/__init__.py:49]
